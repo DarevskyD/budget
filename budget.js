@@ -1,3 +1,5 @@
+'use strict';
+
 let money = +prompt("Ваш бюджет на месяц?", ''),
   time = prompt('Введите дату в формате YYYY-MM-DD', '');
 
@@ -11,38 +13,34 @@ let appData = {
 };
 
 
-
 // for (let i = 0; i < 2; i++) {
-//   a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-//     b = +prompt("Во сколько обойдется?", '');
-//   if ((typeof (a)) === "string" && (typeof (a)) != null && (typeof (b)) != null &&
-//     a != '' && b != '' && a.length < 50) {
+//   let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+//     b = +prompt("Во сколько обойдется?", "");
+//   if (typeof (a) === 'string' && typeof (a) != null && typeof (b) != null &&
+//     a != "" && b != "" && a.length < 50) {
+//     console.log("ок");
 //     appData.expenses[a] = b;
-//     console.log("ok");
 //   } else {
-//     a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-//       b = +prompt("Во сколько обойдется?", '');
-//     appData.expenses[a] = b;
-//     console.log("else работает");
+//     console.log("Возвращаемся к статье расходов");
+//     i--;
 //   }
 // };
 
 let i = 0;
-while (i < 2; i++) {
-  a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-    b = +prompt("Во сколько обойдется?", '');
-  if ((typeof (a)) === "string" && (typeof (a)) != null && (typeof (b)) != null &&
-    a != '' && b != '' && a.length < 50) {
-    appData.expenses[a] = b;
-    console.log("ok");
-  } else {
-    a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-      b = +prompt("Во сколько обойдется?", '');
-    appData.expenses[a] = b;
-    console.log("else работает");
-  }
-};
+while (i < 2) {
+  let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+    b = +prompt("Во сколько обойдется?", "");
 
+  if (typeof (a) === 'string' && typeof (a) != null && typeof (b) != null &&
+    a != "" && b != "" && a.length < 50) {
+    console.log("ok");
+    appData.expenses[a] = b;
+  } else {
+    console.log("Возвращаемся к статье расходов");
+    i--;
+  }
+  i++;
+}
 
 
 appData.moneyPerDay = appData.budget / 30;
